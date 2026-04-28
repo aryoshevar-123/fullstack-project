@@ -1,8 +1,9 @@
-import { Button, ClientOnly, Container, Flex, HStack, Text } from "@chakra-ui/react";
+import { Button, ClientOnly, Container, Flex, HStack, Icon, Text } from "@chakra-ui/react";
 import { useColorMode } from "../components/ui/color-mode";
 import { Link } from "react-router-dom";
 
 import { FiPlusSquare } from "react-icons/fi";
+import { FaCartShopping } from "react-icons/fa6";
 import { LuMoon, LuSun } from "react-icons/lu";
 
 const Navbar = () => {
@@ -18,8 +19,12 @@ const Navbar = () => {
                 sm:"row"
             }}
         >
-            <Text
-                fontSize={{ base: "22", sm:"28" }}
+            <HStack 
+            spacing={2} 
+            alignItems={"center"}
+            >
+                <Text
+                fontSize={{ base: "22px", sm:"28px" }}
                 fontWeight={"bold"}
                 textTransform={"uppercase"}
                 textAlign={"center"}
@@ -29,8 +34,10 @@ const Navbar = () => {
                 bgClip={"text"}
                 color="transparent"
             >
-                <Link to={"/"}>Product Store</Link>
-            </Text>
+                    <Link to={"/"}>Product Store</Link>                   
+                </Text>
+            </HStack>
+            
 
             <HStack spacing={2} alignItems={"center"}>
                 <Link to={"/create"}>
