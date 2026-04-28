@@ -38,7 +38,7 @@ const CreatePage = () => {
             <VStack
                 spacing = {8}
             >
-                <Heading as={"h1"} size={"2xl"} textAlign={"center"} marginBottom={8}>
+                <Heading as={"h1"} size={"2xl"} textAlign={"center"} marginBottom={8} color={"blue.500"}>
                     Create New Product
                 </Heading>
                 
