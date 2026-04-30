@@ -37,7 +37,7 @@ const Navbar = () => {
                 gradientTo="blue.500"
                 bgClip={"text"}
                 color="transparent"
-            >
+                >
                     <Link to={"/"}>Product Store</Link>                   
                 </Text>
             </HStack>

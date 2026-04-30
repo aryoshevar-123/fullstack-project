@@ -1,5 +1,5 @@
 import { Container, VStack, Text, SimpleGrid } from "@chakra-ui/react";
-import { ProductCard } from "../components/ProductCard"
+import ProductCard from "../components/ProductCard.jsx"
 import { useEffect } from 'react';
 import { Link } from "react-router-dom";
 import { useProductStore } from "../store/product";
@@ -29,20 +29,21 @@ const HomePage = () => {
                 </Text>
 
                 <SimpleGrid
-                    column={{
+                    columns={{
                         base:1,
                         md:2,
                         lg:3
                     }}
-                    spacing={10}
-                    w={"full"}
+                    gap={"10px"}
+                    w={"4xl"}
                 >
                     {products.map((product) => (
                         <ProductCard key={product._id} product={product}/>
                     ))}
                 </SimpleGrid>
 
-                <Text fontSize={'xl'} textAlign={"center"} fontWeight={"bold"} color='gray.500'>
+                {products.length === 0 && (
+                    <Text fontSize={'xl'} textAlign={"center"} fontWeight={"bold"} color='gray.500'>
                     No Product Found {" "}
                     <Link to={"/create"}>
                         <Text as={'span'} color={"blue.500"} _hover={{ textDecoration: "underline" }}>
@@ -50,6 +51,7 @@ const HomePage = () => {
                         </Text>
                     </Link>
                 </Text>
+                )}
             </VStack>
 
         </Container>

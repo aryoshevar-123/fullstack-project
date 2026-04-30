@@ -21,7 +21,7 @@ const CreatePage = () => {
                 description: message,
                 type: "error",
                 closable: true
-            })  
+            })
         } else {
             toaster.create({
                 title: "Success",
