@@ -13,7 +13,7 @@ const HomePage = () => {
     console.log("Products", products);
 
     return (
-        <Container maxW={'container.xl'} py={12}>
+        <Container fluid py={12}>
             <VStack spacing = {8}>
                 <Text
                     fontSize = {"30px"}
@@ -35,7 +35,8 @@ const HomePage = () => {
                         lg:3
                     }}
                     gap={"10px"}
-                    w={"4xl"}
+                    w={"full"}
+                    px={"28"}
                 >
                     {products.map((product) => (
                         <ProductCard key={product._id} product={product}/>
