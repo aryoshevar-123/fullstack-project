@@ -4,7 +4,7 @@ import { connectDB } from "../config/db.js";
 
 export const getProduct = async(req,res) => {
     try {
-        await connectDB;
+        await connectDB();
 
         const products = await Product.find({});
         res.status(200).json({success: true, data: products});
@@ -24,7 +24,7 @@ export const createProduct = async(req,res) => {
     const newProduct = new Product(product);
 
     try {
-        await connectDB;
+        await connectDB();
 
         await newProduct.save();
         res.status(201).json({success: true, data: newProduct});
