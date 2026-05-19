@@ -14,7 +14,8 @@ const productSchema = mongoose.Schema ({
         required: true
     }
 }, {
-    timestamps: true // createdAt, updatedAt
+    timestamps: true, // createdAt, updatedAt
+    bufferCommands: false
 });
 
 const Product = mongoose.model('Product', productSchema);
