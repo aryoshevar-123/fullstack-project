@@ -1,3 +1,6 @@
+import dns from "node:dns";
+dns.setServers(["8.8.8.8", "8.8.4.4"]);
+
 import express from "express";
 import dotenv from "dotenv";
 import path from "path";
@@ -14,7 +17,6 @@ const __dirname = path.resolve();
 
 app.use(express.json()); //allows us to accept JSON data in the body
 
-app.use("/products", productRoutes); 
 app.use("/api/products", productRoutes);
 
 if(process.env.NODE_ENV === "production") {
