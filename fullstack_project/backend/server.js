@@ -14,6 +14,7 @@ const __dirname = path.resolve();
 
 app.use(express.json()); //allows us to accept JSON data in the body
 
+app.use("/products", productRoutes); 
 app.use("/api/products", productRoutes);
 
 if(process.env.NODE_ENV === "production") {
